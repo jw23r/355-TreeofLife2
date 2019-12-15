@@ -4,15 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Webb
 {
-
+    /// <summary>
+    /// sets up boss to do an attack
+    /// picks a random one
+    /// affter attacks switch to cooldown
+    /// </summary>
     public class BossStateAttack : BossState
     {
-        public static bool spawn;
-        float timer;
-        float time = 10;
-        public BossController other;
-        bool random;
-        int attack;
+        public static bool spawn; // allows other sript to see if spawn is true dont think i need but just in case
+        float timer;// keeps track of time
+        float time = 10;// how long should attack for
+        public BossController other; // gets script
+        bool random;// sees if random is true
+        int attack; // waht attack to preform
+        /// <summary>
+        /// overides update to do the attacks
+        /// after chosing one it will prefrom it for the duration unless damged and after it is done with attack will switch to cooldown
+        /// </summary>
+        /// <param name="boss"></param>
+        /// <returns></returns>
         public override BossState Update(BossController boss)
         {
           if (random == false)

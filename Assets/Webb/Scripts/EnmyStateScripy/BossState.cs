@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 namespace Webb
-{
+{/// <summary>
+/// sets up state  state design pattern
+/// </summary>
     public abstract class BossState
     {
         public abstract BossState Update(BossController boss);

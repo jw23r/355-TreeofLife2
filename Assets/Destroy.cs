@@ -1,26 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// used to destoy object when player jumps on it
+/// </summary>
 public class Destroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   /// <summary>
+   /// checks if player clooides with it and destroys everthing
+   /// </summary>
+   /// <param name="collider"></param>
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.transform.tag == "Player")
             {
             Destroy(transform.parent.gameObject);
-            print("bambambambambambambambambambambambam");
+            
         }
     }
 }

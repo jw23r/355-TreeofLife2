@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 namespace Webb
-{
+{/// <summary>
+/// this controls the hud and keeps track of player and enemys health
+/// updates the hud gui
+/// </summary>
     public class HUDControler : MonoBehaviour
     {
         // Start is called before the first frame update
-        public Image playerHealthBar;
-        public RawImage win;
-        public RawImage gameOver;
-       static public float playerHealth = 550;
-        float PlayerHealthMax = 550;
-        public Image enemyHealthBar;
-        static public float enemyHealth = 1000;
-        float enemyHealthMax = 1000;
+        public Image playerHealthBar;// stores playerhealthbar
 
+        public RawImage win;//stores the win image
+        public RawImage gameOver;//stores the gameover image
+       static public float playerHealth = 550;//stores the player health
+        float PlayerHealthMax = 550;// stores the player max health
+        public Image enemyHealthBar;//stores enemy health bar
+        static public float enemyHealth = 1000; //stores enemy health
+        float enemyHealthMax = 1000;//stores enemymax health
 
+        /// <summary>
+        /// sets both images to not render on screen
+        /// </summary>
         void Start()
         {
             win.enabled = false;
@@ -26,6 +32,10 @@ namespace Webb
         }
 
         // Update is called once per frame
+        /// <summary>
+        /// updaets the health bars of all players and checks for win and lose state and makes sure only one of them can be true
+        /// whatever state becomes true will display appriet win or lose state
+        /// </summary>
         void Update()
         {
             HUD();
@@ -38,7 +48,9 @@ namespace Webb
                 win.enabled = true;
             }
         }
-
+        /// <summary>
+        /// function for updating health bar
+        /// </summary>
         private void HUD()
         {
             

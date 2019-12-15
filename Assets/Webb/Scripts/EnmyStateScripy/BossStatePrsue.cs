@@ -3,10 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Webb
-{
+{/// <summary>
+/// this class sets up chasing the enemy
+/// </summary>
     public class BossStatePrsue : BossState
     {
         // Start is called before the first frame update
+        /// <summary>
+        /// overides the boss update behavior
+        /// and is lloking to chase enemy and when inrange swithc to attakc
+        /// also checks for being damged
+        /// </summary>
+        /// <param name="boss"></param> refrence of the main script
+        /// <returns></returns>
         public override BossState Update(BossController boss)
         {//////////// State Behavior
          // move towards player
