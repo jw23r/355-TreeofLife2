@@ -88,12 +88,14 @@ public float distanceToAttackTarget()
                 
                 if (vectorBetween.sqrMagnitude < VisionDistanceThreshold * VisionDistanceThreshold)
                 {
+                  //  return true;
                     //player is close enogue to boss to activate it
                     Ray ray = new Ray(transform.position, vectorBetween.normalized);
 
                     if (Physics.Raycast(ray, out RaycastHit hit))
                     {
-
+                        Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+                        Debug.DrawRay(transform.position, forward, Color.green);
                         if (hit.transform == attackTarget) return true;
                         //clear line of vision
 
